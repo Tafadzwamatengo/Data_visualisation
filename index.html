@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tafadzwa Matengo - Profile</title>
+  <style>
+    /* ===== Animated Gradient Background ===== */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: linear-gradient(270deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+      background-size: 800% 800%;
+      animation: gradientAnimation 15s ease infinite;
+      color: #333;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* ===== Card Container ===== */
+    .profile-card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      max-width: 500px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-card:hover {
+      transform: scale(1.02);
+    }
+
+    /* ===== Profile Heading ===== */
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+      color: #ff6f61;
+    }
+
+    h2 {
+      margin: 10px 0;
+      font-size: 1.2em;
+      font-weight: normal;
+      color: #555;
+    }
+
+    /* ===== Interests ===== */
+    .interests {
+      margin: 20px 0;
+      font-size: 1.1em;
+      color: #444;
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      margin: 10px 5px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.3s;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+    }
+
+    .linkedin {
+      background-color: #0077b5;
+    }
+
+    .facebook {
+      background-color: #4267B2;
+    }
+
+    .scholar {
+      background-color: #f5c518;
+      color: #333;
+    }
+
+    .fun-fact {
+      background-color: #ff6f61;
+    }
+
+    /* ===== Fun Fact Message ===== */
+    #funMessage {
+      margin-top: 20px;
+      font-size: 1em;
+      font-style: italic;
+      color: #ff4b3e;
+      transition: opacity 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-card">
+    <h1>Tafadzwa Matengo</h1>
+    <h2>Research & Monitoring Officer</h2>
+    <div class="interests">
+      Interests: R, Python, D3.js <br>
+      Passionate about data visualization and exploring patterns in data.
+    </div>
+
+    <!-- Buttons -->
+    <button class="btn linkedin" onclick="openLinkedIn()">View LinkedIn</button>
+    <button class="btn facebook" onclick="openFacebook()">View Facebook</button>
+    <button class="btn scholar" onclick="openScholar()">View Google Scholar</button>
+    <button class="btn fun-fact" onclick="revealFact()">Click for a fun fact!</button>
+
+    <p id="funMessage"></p>
+  </div>
+
+  <script>
+    // LinkedIn link
+    function openLinkedIn() {
+      window.open('https://www.linkedin.com/in/tafadzwa-matengo-758a41191/', '_blank');
+    }
+
+    // Facebook link
+    function openFacebook() {
+      window.open('https://www.facebook.com/tafadzwa.matengo.3', '_blank');
+    }
+
+    // Google Scholar link
+    function openScholar() {
+      window.open('https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=Tafadzwa++Matengo&btnG=', '_blank');
+    }
+
+    // Fun facts trick
+    const facts = [
+      "I secretly love making charts with rainbow colors 🌈",
+      "Data never lies… but it can be dramatic 📊",
+      "Sometimes I talk to my datasets like they understand me 🤓",
+      "Click again for another surprise!"
+    ];
+
+    function revealFact() {
+      const msg = document.getElementById('funMessage');
+      const randomFact = facts[Math.floor(Math.random() * facts.length)];
+      msg.textContent = randomFact;
+    }
+  </script>
+
+</body>
+</html>
